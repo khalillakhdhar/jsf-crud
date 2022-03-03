@@ -102,7 +102,7 @@ public class User{
             stmt.setString(4, gender);
             stmt.setString(5, address);
             result = stmt.executeUpdate();
-            connection.close();
+            connection.close(); //optionelle
         }catch(Exception e){
             System.out.println(e);
         }

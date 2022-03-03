@@ -28,10 +28,10 @@
             <center>
                 <h2><h:outputText value="User Records"/></h2>
             </center>
-            <h:dataTable binding="#{table}" value="#{user.usersList()}" var="u" class="table table-striped table-hover table-bordered" >
+            <h:dataTable  value="#{user.usersList()}" var="u" class="table table-striped table-hover table-bordered" >
                 <h:column>
                     <f:facet name="header">ID</f:facet>
-                    <h:outputText value="#{table.rowIndex + 1}"/>
+                    <h:outputText value="#{u.id}"/>
                 </h:column>
                 <h:column>
                     <f:facet name="header">User Name</f:facet>
