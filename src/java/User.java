@@ -60,8 +60,8 @@ public class User{
     // Used to establish connection
     public Connection getConnection(){
         try{
-            Class.forName("com.mysql.jdbc.Driver");   
-            connection = DriverManager.getConnection( "jdbc:mysql://localhost:3306/user","root","");
+            Class.forName("com.mysql.jdbc.Driver");   //initialiser
+            connection = DriverManager.getConnection( "jdbc:mysql://localhost:3306/user","root",""); //chaine(drive=jdbc:mysql, url="localhost:3306/base,username=root,password="")
         }catch(Exception e){
             System.out.println(e);
         }
@@ -73,7 +73,7 @@ public class User{
             usersList = new ArrayList();
             connection = getConnection();
             Statement stmt=getConnection().createStatement();  
-            ResultSet rs=stmt.executeQuery("select * from users");  
+            ResultSet rs=stmt.executeQuery("select * from users");  // liste objets
             while(rs.next()){
                 User user = new User();
                 user.setId(rs.getInt("id"));
